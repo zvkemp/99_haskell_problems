@@ -48,3 +48,7 @@ compress (x:xs)
 pack :: (Eq a) => [a] -> [[a]]
 pack [] = []
 pack (x:xs) = (x:(takeWhile (==x) xs)) : (pack (dropWhile (==x) xs))
+
+--10
+encode :: (Eq a) => [a] -> [(a, Int)]
+encode = map (\x -> (head x, length x)) . pack
