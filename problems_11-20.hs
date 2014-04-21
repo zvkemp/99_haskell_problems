@@ -17,3 +17,9 @@ repli (x:xs) n = (take n (repeat x)) ++ repli xs n
 dropEvery :: [a] -> Int -> [a]
 dropEvery list n = [fst x | x <- (zip list [1..]), mod (snd x) n > 0]
 
+--17
+split :: [a] -> Int -> [[a]]
+split list n = [front, back]
+  where front = take n list
+        back  = drop n list
+
