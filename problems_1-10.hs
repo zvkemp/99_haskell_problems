@@ -36,7 +36,6 @@ isPalindromic l = l == (myReverse l)
 --7
 --TODO
 
-
 --8
 compress :: (Eq a) => [a] -> [a]
 compress [] = []
@@ -44,3 +43,8 @@ compress [x] = [x]
 compress (x:xs)
   | x == (head xs) = compress xs
   | otherwise = x : compress xs
+
+--9
+pack :: (Eq a) => [a] -> [[a]]
+pack [] = []
+pack (x:xs) = (x:(takeWhile (==x) xs)) : (pack (dropWhile (==x) xs))
