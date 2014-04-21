@@ -28,3 +28,8 @@ myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse (x:xs) = myReverse xs ++ [x]
 
+--6
+isPalindromic :: (Eq a) => [a] -> Bool
+isPalindromic l = l == (myReverse l)
+
+
