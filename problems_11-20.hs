@@ -12,3 +12,8 @@ repli :: [a] -> Int -> [a]
 repli [] _     = []
 repli (x:xs) n = (take n (repeat x)) ++ repli xs n
 
+
+--16
+dropEvery :: [a] -> Int -> [a]
+dropEvery list n = [fst x | x <- (zip list [1..]), mod (snd x) n > 0]
+
