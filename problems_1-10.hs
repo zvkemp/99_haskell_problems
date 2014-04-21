@@ -18,3 +18,7 @@ elementAt (x:xs) n
   | n == 1 = x
   | otherwise = elementAt xs (n - 1)
 
+--4
+myLength :: [a] -> Int
+myLength []     = 0
+myLength (x:xs) = 1 + myLength xs
