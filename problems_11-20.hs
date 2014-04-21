@@ -23,3 +23,7 @@ split list n = [front, back]
   where front = take n list
         back  = drop n list
 
+--18
+slice :: [a] -> Int -> Int -> [a]
+slice list a b = take (b - a + 1) (drop (a - 1) list)
+
