@@ -33,3 +33,8 @@ rotate xs n =
   let m = if n >= 0 then n else n + length xs
   in (drop m xs) ++ (take m xs)
 
+--20
+removeAt :: Int -> [a] -> [a]
+removeAt _ [] = []
+removeAt n xs = [fst x | x <- (zip xs [1..]), (snd x) /= n]
+
