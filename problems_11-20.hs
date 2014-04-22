@@ -29,6 +29,7 @@ slice list a b = take (b - a + 1) (drop (a - 1) list)
 
 --19
 rotate :: [a] -> Int -> [a]
-rotate xs n 
-  | n >= 0 = (drop n xs) ++ (take n xs)
-  | otherwise = (drop (n + length xs) xs) ++ (take (n + length xs) xs)
+rotate xs n =
+  let m = if n >= 0 then n else n + length xs
+  in (drop m xs) ++ (take m xs)
+
